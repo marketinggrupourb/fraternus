@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* ============================================================
+   FRATERNUS — sistema de design
+   Paleta da marca (Adobe Color) + tipografia Funnel Sans
+   ============================================================ */
+
+@theme {
+  --color-navy: #183459;
+  --color-navy-deep: #0e2340;
+  --color-navy-soft: #26456e;
+
+  --color-sand: #f2dabd;
+  --color-paper: #faf3e9;
+  --color-taupe: #bfac95;
+  --color-sage: #a9bf78;
+  --color-clay: #d9753b;
+
+  --font-sans: "Funnel Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+
+  --text-display: clamp(2.25rem, 4.6vw, 3.6rem);
+  --text-title: clamp(2rem, 4.2vw, 3.25rem);
+  --text-lead: clamp(1.125rem, 1.6vw, 1.375rem);
+
+  --spacing-band: clamp(4.5rem, 9vw, 8.5rem);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* compensa o cabeçalho fixo ao navegar por âncoras */
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-navy);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Títulos: entrelinha fechada e leve negativação de espaçamento.
+   O contraste de peso é o que carrega a personalidade. */
+h1,
+h2,
+h3 {
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background-color: var(--color-clay);
+  color: #fff;
+}
+
+/* Foco visível e consistente em toda a navegação por teclado */
+:focus-visible {
+  outline: 2px solid var(--color-clay);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- Espinha: filete contínuo que atravessa as seções ---------
+   Referência direta ao traço único e dobrado do símbolo Fraternus.
+   Some abaixo de 1024px para não competir com o conteúdo. */
+.espinha {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .espinha::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    left: 2.5rem;
+    width: 1px;
+    background-color: currentColor;
+    opacity: 0.22;
+  }
+
+  .espinha-no::after {
+    content: "";
+    position: absolute;
+    top: var(--spacing-band);
+    left: calc(2.5rem - 3px);
+    width: 7px;
+    height: 7px;
+    background-color: var(--color-clay);
+  }
+}
+
+/* Rolagem horizontal das galerias sem barra visível */
+.trilho {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-taupe) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
