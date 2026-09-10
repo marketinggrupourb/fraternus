@@ -19,7 +19,7 @@
   --font-sans: "Funnel Sans", ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, sans-serif;
 
-  --text-display: clamp(2.25rem, 4.6vw, 3.6rem);
+  --text-display: clamp(2.25rem, 4.2vw, 3.4rem);
   --text-title: clamp(2rem, 4.2vw, 3.25rem);
   --text-lead: clamp(1.125rem, 1.6vw, 1.375rem);
 

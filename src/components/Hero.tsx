@@ -11,11 +11,11 @@ export default function Hero() {
         src="/ilustracoes/jesus.svg"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute right-2 top-1/2 hidden h-[78%] max-w-[42%] -translate-y-1/2 object-contain opacity-35 md:block lg:right-8"
+        className="pointer-events-none absolute right-2 top-1/2 hidden w-[34rem] max-w-[40%] -translate-y-1/2 object-contain md:block lg:right-8"
       />
 
       <div className="relative mx-auto max-w-[84rem] px-5 pb-24 pt-36 sm:px-8 sm:pb-32 sm:pt-44 lg:pt-52">
-        <div className="max-w-[58rem]">
+        <div className="max-w-[58rem] md:max-w-[55%]">
           <h1 className="text-[length:var(--text-display)] font-light leading-[0.98] tracking-[-0.03em]">
             {site.manifesto.map((linha) => (
               <span key={linha} className="block">
